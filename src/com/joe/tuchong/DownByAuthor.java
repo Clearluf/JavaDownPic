@@ -1,6 +1,7 @@
 package com.joe.tuchong;
 
 import java.io.IOException;
+import java.util.Date;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -12,12 +13,17 @@ import com.joe.util.downFromUrl;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-
-public class test {
-
+/**
+ * 通过作者下载图片
+ * @author Joe
+ *
+ */
+public class DownByAuthor {
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String url="http://tuchong.com/rest/2/sites/1182492/posts?count=200&page=1&before_timestamp=1565859630";
+		long timetamp=new Date().getTime();
+		String url="http://tuchong.com/rest/2/sites/4014041/posts?count=200&page=1&before_timestamp="+timetamp;
 		String originJson=JsonManager.getJsonFromUrl(url);
 		
 		//Document doc = (Jsoup.connect(url).get());
@@ -44,7 +50,7 @@ public class test {
 			int count=0;
 			for(Element e:es) {
 				String imgUrl=e.absUrl("abs:src");
-				new downFromUrl("d:/DownPic/TuChong", imgUrl);
+				new downFromUrl("d:/DownPic/TuChong4014041", imgUrl);
 				downFromUrl.downImages();
 				System.out.println(imgUrl+" 下载完成");
 				count++;
