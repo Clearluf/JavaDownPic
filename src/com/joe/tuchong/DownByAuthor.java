@@ -24,7 +24,7 @@ public class DownByAuthor {
 		// TODO Auto-generated method stub
 		long timetamp=new Date().getTime();
 		String url="http://tuchong.com/rest/2/sites/4014041/posts?count=200&page=1&before_timestamp="+timetamp;
-		String originJson=JsonManager.getJsonFromUrl(url);
+		String originJson=JsonManager.getSourceFromUrl(url);
 		
 		//Document doc = (Jsoup.connect(url).get());
 		//System.out.println(doc);

@@ -7,7 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class JsonManager {
-    public static String getJsonFromUrl(String urlStr) {
+    public static String getSourceFromUrl(String urlStr) {
         URL url = null;
         HttpURLConnection httpConn = null;
         BufferedReader in = null;
